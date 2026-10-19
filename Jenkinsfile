@@ -82,7 +82,7 @@ pipeline {
                     echo "----- Container logs -----"
                     docker logs ${CONTAINER_NAME}
                     echo "----- Request inside the container -----"
-                    docker exec ${CONTAINER_NAME} wget -qO- http://localhost:8000/health
+                    docker exec ${CONTAINER_NAME} wget -qO- http://127.0.0.1:8000/health
                 '''
             }
         }
