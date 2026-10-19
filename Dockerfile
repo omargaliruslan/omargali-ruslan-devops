@@ -24,5 +24,9 @@ ENV APP_PORT=8000 \
 # 5. Document the port the application listens on
 EXPOSE 8000
 
+# Docker checks that the application answers on /health
+HEALTHCHECK --interval=30s --timeout=3s --retries=3 \
+    CMD wget -qO- http://localhost:8000/health || exit 1
+
 # 6. Command executed when a container starts
 CMD ["python", "app.py"]
