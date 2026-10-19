@@ -1,0 +1,13 @@
+# Logs are generated at runtime and change constantly
+*.log
+
+# Local backups do not belong in the repository
+backup/
+
+# Secrets and local environment variables
+.env
+
+# OS / editor / Python artifacts
+.DS_Store
+*.swp
+__pycache__/
