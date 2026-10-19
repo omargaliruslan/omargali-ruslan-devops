@@ -1,0 +1,16 @@
+# Docker Compose configuration — Ruslan Omargali
+# Start:  docker compose up -d      Stop:  docker compose down
+services:
+  app:
+    build: .
+    image: omargali-ruslan-devops
+    container_name: omargali-ruslan-compose
+    environment:
+      # Values are taken from the .env file if it exists, otherwise defaults
+      STUDENT_NAME: ${STUDENT_NAME:-Ruslan}
+      STUDENT_SURNAME: ${STUDENT_SURNAME:-Omargali}
+      STUDENT_GROUP: ${STUDENT_GROUP:-IT2-2309}
+      STUDENT_ID: ${STUDENT_ID:-37858}
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
