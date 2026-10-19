@@ -1,0 +1,2 @@
+Private notes of Ruslan Omargali.
+Only the owner may read and write this file (chmod 600).

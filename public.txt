@@ -1,0 +1,2 @@
+Public information: Ruslan Omargali, group IT2-2309.
+Owner may read/write, everybody else may only read (chmod 644).
