@@ -19,3 +19,23 @@ omargali_ruslan/
 ├── logs/                    # application logs (ignored by Git)
 └── backup/                  # local backups (ignored by Git)
 ```
+
+## Run with Docker
+
+```bash
+docker build -t omargali-ruslan-devops .
+docker run --name omargali-ruslan-container omargali-ruslan-devops
+```
+
+## Run with Docker Compose
+
+```bash
+docker compose up -d     # http://localhost:8000
+docker compose down
+```
+
+## Jenkins
+
+`jenkins/` contains a local Jenkins server with Docker CLI.
+Pipeline job `Omargali_Ruslan_DevOps` uses the `Jenkinsfile` from this repository:
+Checkout → Build → Test → Docker Build → Docker Run.

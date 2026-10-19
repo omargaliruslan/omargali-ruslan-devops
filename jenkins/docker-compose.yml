@@ -1,0 +1,20 @@
+# Local Jenkins server for the lab.
+# Start:  cd jenkins && docker compose up -d --build
+# Open:   http://localhost:8080
+services:
+  jenkins:
+    build: .
+    container_name: jenkins
+    # root is used only to access the Docker socket in this lab environment
+    user: root
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      # Jenkins talks to the Docker engine of the host machine
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+
+volumes:
+  jenkins_home:
